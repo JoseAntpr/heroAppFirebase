@@ -46,6 +46,16 @@ export class HeroesService {
                   return res;
                 });
   }
+
+  borrarHeroe(key){
+    let url = `${ this.heroeUrl }${key}.json`
+
+    return this.http.delete( url )
+                .map(res => {
+                  console.log("Borrando", res);
+                  return res;
+                });
+  }
   
 
 }

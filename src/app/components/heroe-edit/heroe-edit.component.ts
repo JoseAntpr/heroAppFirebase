@@ -24,7 +24,6 @@ export class HeroeEditComponent implements OnInit {
               private router: Router,
               private route: ActivatedRoute) { 
       this.route.params.subscribe( params => {
-        console.log(params);
         this.id = params['id'];
       })
   }
