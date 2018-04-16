@@ -23,7 +23,7 @@ export class HeroesService {
                 .map(res => {
                   console.log("Guardando", res);
                   return res;
-                })
+                });
   }
 
   actualizarHeroe( heroe: Heroe, key: string){
@@ -37,7 +37,14 @@ export class HeroesService {
                 .map(res => {
                   console.log("Actualizando", res);
                   return res;
-                })
+                });
+  }
+  getHeroes(){
+    return this.http.get( this.heroesUrl)
+                .map(res => {
+                  console.log("Obteniendo", res);
+                  return res;
+                });
   }
   
 

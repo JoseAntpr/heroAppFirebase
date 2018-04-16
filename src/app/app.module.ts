@@ -13,13 +13,15 @@ import { HeroesService } from './services/heroes.service';
 import { AppComponent } from './app.component';
 import { HeroesComponent } from './components/heroes/heroes.component';
 import { HeroeEditComponent } from './components/heroe-edit/heroe-edit.component';
+import { KeysPipe } from './pipes/keys.pipe';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     HeroesComponent,
-    HeroeEditComponent
+    HeroeEditComponent,
+    KeysPipe
   ],
   imports: [
     BrowserModule,
