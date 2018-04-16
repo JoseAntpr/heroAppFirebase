@@ -10,12 +10,13 @@ import { Heroe } from '../../interfaces/heroe.interface';
 export class HeroesComponent implements OnInit {
 
   heroes: any[] = [];
+  loading: boolean = true;
 
   constructor(private heroesService: HeroesService) {
     this.heroesService.getHeroes()
         .subscribe( (data:Heroe[]) => {
-            console.log(data);
-            this.heroes = data;
+          this.heroes = data;
+          this.loading=false;
         });
    }
 
