@@ -13,7 +13,7 @@ export class HeroesComponent implements OnInit {
 
   constructor(private heroesService: HeroesService) {
     this.heroesService.getHeroes()
-        .subscribe( data => {
+        .subscribe( (data:Heroe[]) => {
             console.log(data);
             this.heroes = data;
         });

@@ -29,6 +29,10 @@ export class HeroeEditComponent implements OnInit {
   }
 
   ngOnInit() {
+    if(this.id !== "nuevo"){
+      this.heroesService.getHeroe(this.id)
+            .subscribe((heroe: Heroe) => this.heroe = heroe)
+    }
   }
 
   guardar(){
@@ -46,6 +50,14 @@ export class HeroeEditComponent implements OnInit {
 
     }
     
+  }
+
+  agregarNuevo(form: NgForm){
+    this.router.navigate(['/heroe', 'nuevo']);
+
+    form.reset({
+      casa: "Marvel"
+    })
   }
 
 }

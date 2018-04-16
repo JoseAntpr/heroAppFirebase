@@ -39,6 +39,14 @@ export class HeroesService {
                   return res;
                 });
   }
+  getHeroe(key: string){
+    let url = `${ this.heroeUrl}/${key}.json`;
+
+    return this.http.get( url )
+                .map( res => res );
+
+  }
+
   getHeroes(){
     return this.http.get( this.heroesUrl)
                 .map(res => {
@@ -47,7 +55,7 @@ export class HeroesService {
                 });
   }
 
-  borrarHeroe(key){
+  borrarHeroe(key: string){
     let url = `${ this.heroeUrl }${key}.json`
 
     return this.http.delete( url )
